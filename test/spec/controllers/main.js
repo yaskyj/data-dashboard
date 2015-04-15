@@ -3,7 +3,7 @@
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('zyringApp'));
+  beforeEach(module('dataDashboard'));
 
   var MainCtrl,
     scope;
