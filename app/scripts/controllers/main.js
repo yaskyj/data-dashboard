@@ -8,10 +8,7 @@
  * Controller of the zyringApp
  */
 angular.module('dataDashboard')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('MainCtrl', ['$scope', 'Traffic', function ($scope, Traffic) {
+      $scope.trafficList = Traffic.query();
+      console.log($scope.trafficList);
+    }]);

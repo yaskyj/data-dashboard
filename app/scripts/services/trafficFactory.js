@@ -1,5 +1,5 @@
 angular.module('dataDashboard')
-  .factory('Apartment',[
+  .factory('Traffic',[
     '$resource',
     //myObj will be created by calling this function
     //and capturing its return value
