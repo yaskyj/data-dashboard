@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the zyringApp
  */
-angular.module('zyringApp')
+angular.module('dataDashboard')
   .controller('AboutCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

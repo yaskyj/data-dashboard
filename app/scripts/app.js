@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('zyringApp', [
+  .module('dataDashboard', [
     'ngAnimate',
     'ngResource',
     'ngRoute',
