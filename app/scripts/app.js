@@ -8,14 +8,9 @@
  *
  * Main module of the application.
  */
-angular
-  .module('dataDashboard', [
-    'ngAnimate',
-    'ngResource',
-    'ngRoute',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
+var dataDashboard = angular.module('dataDashboard', ['ngAnimate', 'ngResource', 'ngRoute', 'ngTouch', 'chart.js']);
+
+dataDashboard.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -28,4 +23,4 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+});
