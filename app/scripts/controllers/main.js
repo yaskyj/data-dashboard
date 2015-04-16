@@ -8,7 +8,6 @@ angular.module('dataDashboard')
             $scope.trafficList = data;
             // console.log($scope.trafficList);
             $scope.countryCount = _.countBy($scope.trafficList, 'country');
-            console.log($scope.countryCount);
           }
         }, function(error) {
             console.log(error);
