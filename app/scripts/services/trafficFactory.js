@@ -1,5 +1,5 @@
-angular.module('dataDashboard')
-  .factory('Traffic',[
+'use strict';
+dataDashboard.factory('Traffic',[
     '$http',
     '$q',
     function($http, $q){
