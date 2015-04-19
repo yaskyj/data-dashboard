@@ -9,8 +9,8 @@ dataDashboard.controller('MainCtrl', ['$scope', 'Traffic', function ($scope, Tra
             // console.log($scope.trafficList);
             $scope.countryCount = _.countBy($scope.trafficList, 'country');
             // console.log($scope.countryCount);
-            $scope.countries = _.map($scope.countryCount, function(a, b) {return b ? b : "Unknown";});
-            $scope.visits = _.map($scope.countryCount, function(a, b) {return a;});
+            $scope.countries = _.keys($scope.countryCount);
+            $scope.visits = _.values($scope.countryCount);
           }
         }, function(error) {
             console.log(error);
