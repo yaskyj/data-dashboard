@@ -3,8 +3,8 @@ dataDashboard
   .controller('MainCtrl', ['$scope', 'Traffic',
     function ($scope, Traffic) {
       $scope.today = function() {
-        $scope.dtStart = new Date().toDateString();
-        $scope.dtEnd = new Date().toDateString();
+        $scope.dtStart = new Date();
+        $scope.dtEnd = new Date();
       };
       $scope.format = 'yyyy-MM-dd';
       $scope.today();
@@ -32,6 +32,10 @@ dataDashboard
         formatYear: 'yy',
         startingDay: 1
       };
+
+      $scope.$watch('[dtStart, dtEnd]', function() {
+        console.log('Start date is ' + $scope.dtStart + ' while the end date is ' + $scope.dtEnd);
+      }, true);
 
       // $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
       Traffic.query(function(data) {
