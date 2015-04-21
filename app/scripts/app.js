@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-var dataDashboard = angular.module('dataDashboard', ['ngAnimate', 'ngResource', 'ngRoute', 'ngTouch', 'chart.js']);
+var dataDashboard = angular.module('dataDashboard', ['ngAnimate', 'ngResource', 'ngRoute', 'ngTouch', 'chart.js', 'ui.bootstrap']);
 
 dataDashboard.config(function ($routeProvider) {
     $routeProvider
