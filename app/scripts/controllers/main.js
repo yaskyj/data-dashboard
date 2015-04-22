@@ -1,4 +1,9 @@
 'use strict';
+Date.prototype.getWeek = function() {
+        var onejan = new Date(this.getFullYear(), 0, 1);
+        return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+}
+
 dataDashboard
   .controller('MainCtrl', ['$scope', 'Traffic',
     function ($scope, Traffic) {
@@ -14,8 +19,8 @@ dataDashboard
 
       $scope.today = function() {
         var currentYear = new Date().getFullYear();
-        $scope.dtStart = new Date(currentYear+'-01-02');
-        $scope.dtEnd = new Date(currentYear+'-12-31');
+        $scope.dtStart = new Date(currentYear,0,1);
+        $scope.dtEnd = new Date(currentYear,11,31);
       };
       $scope.format = 'yyyy-MM-dd';
       $scope.today();
