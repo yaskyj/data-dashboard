@@ -9,13 +9,40 @@ dataDashboard
     function ($scope, Traffic) {
       var updateCurrentTraffic = function() {
         $scope.currentTraffic = _.filter($scope.trafficList, function(item) {
-          // 3918 US before
           return ((item.timestamp * 1000) >= Date.parse($scope.dtStart)) && ((item.timestamp * 1000) <= Date.parse($scope.dtEnd));
         });
         $scope.countryCount = _.countBy($scope.currentTraffic, 'country');
         $scope.countries = _.keys($scope.countryCount);
         $scope.visits = _.values($scope.countryCount);
-      }
+        $scope.weeklyCount = _.sortBy(_.groupBy($scope.currentTraffic, function(item) {
+          return new Date(item.timestamp * 1000).getWeek();
+        }), function(a, b) {
+          return parseInt(b);
+        });
+
+        $scope.labels = _.map($scope.weeklyCount, function(a, b) {
+          return 'Week ' + (b + 1);
+        });
+        $scope.series = ['Visits'];
+        $scope.data = _.map($scope.weeklyCount, function(a) {
+          return a.length;
+        });
+        $scope.data = [$scope.data];
+        console.log($scope.labels);
+        console.log($scope.data);
+        // console.log($scope.weekNumbers);
+        // console.log($scope.countPerWeek);
+
+        // $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
+        // $scope.series = ['Series A', 'Series B'];
+        // $scope.data = [
+        //   [65, 59, 80, 81, 56, 55, 40],
+        //   [28, 48, 40, 19, 86, 27, 90]
+        // ];
+        // $scope.onClick = function (points, evt) {
+        //   console.log(points, evt);
+        // };
+      };
 
       $scope.today = function() {
         var currentYear = new Date().getFullYear();
@@ -33,14 +60,12 @@ dataDashboard
       $scope.openStart = function($event) {
         $event.preventDefault();
         $event.stopPropagation();
-
         $scope.openedStart = true;
       };
 
       $scope.openEnd = function($event) {
         $event.preventDefault();
         $event.stopPropagation();
-
         $scope.openedEnd = true;
       };
 
