@@ -11,15 +11,21 @@ dataDashboard
         $scope.currentTraffic = _.filter($scope.trafficList, function(item) {
           return ((item.timestamp * 1000) >= Date.parse($scope.dtStart)) && ((item.timestamp * 1000) <= Date.parse($scope.dtEnd));
         });
+        //Visits by country
         $scope.countryCount = _.countBy($scope.currentTraffic, 'country');
         $scope.countries = _.keys($scope.countryCount);
         $scope.visits = _.values($scope.countryCount);
+
+        //Visits by week
         $scope.weeklyCount = _.sortBy(_.groupBy($scope.currentTraffic, function(item) {
           return new Date(item.timestamp * 1000).getWeek();
         }), function(a, b) {
           return parseInt(b);
         });
-
+        $scope.allWeeksInRange = _.range(1, $scope.dtEnd.getWeek() + 1);
+        console.log($scope.allWeeksInRange);
+        console.log($scope.dtStart.getWeek());
+        console.log($scope.dtEnd.getWeek());        
         $scope.labels = _.map($scope.weeklyCount, function(a, b) {
           return 'Week ' + (b + 1);
         });
@@ -28,20 +34,6 @@ dataDashboard
           return a.length;
         });
         $scope.data = [$scope.data];
-        console.log($scope.labels);
-        console.log($scope.data);
-        // console.log($scope.weekNumbers);
-        // console.log($scope.countPerWeek);
-
-        // $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-        // $scope.series = ['Series A', 'Series B'];
-        // $scope.data = [
-        //   [65, 59, 80, 81, 56, 55, 40],
-        //   [28, 48, 40, 19, 86, 27, 90]
-        // ];
-        // $scope.onClick = function (points, evt) {
-        //   console.log(points, evt);
-        // };
       };
 
       $scope.today = function() {
