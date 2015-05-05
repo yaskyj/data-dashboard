@@ -35,6 +35,14 @@ dataDashboard
         $scope.weekSeries = ['Visits'];
       };
 
+      $scope.tabs = [
+        {
+          active: true
+        },
+        {
+          active: false
+        }
+      ];
       //Date settings
       $scope.today = function() {
         var currentYear = new Date().getFullYear();
@@ -80,5 +88,9 @@ dataDashboard
         else {
           console.log('There was an error!');
         }
+      });
+
+      $('div[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        alert(e.target); // activated tab
       });
     }]);
