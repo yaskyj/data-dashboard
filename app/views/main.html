@@ -22,23 +22,9 @@
     <div class="col-md-3"></div>
   </div>
   <tabset>
-    <tab heading="Visits By Country" active="tabs[0].active" disable="tabs[0].active" data-toggle="tab ">
-      <div class="row">
-        <div class="col-md-12">
-          <div data-ng-if="tabs[0].active">
-            <canvas id="pie" class="chart chart-pie" data="visits" labels="countries"></canvas>
-          </div>
-        </div>
-      </div>
-    </tab>
-    <tab heading="Visits by Week" active="tabs[1].active" disable="tabs[1].active" data-toggle="tab">
-      <div class="row">
-        <div class="col-md-12">
-          <div data-ng-if="tabs[1].active">
-            <canvas id="line" class="chart chart-line" data="countByWeekRange" labels="weekLabels" legend="true" series="weekSeries">
-            </canvas>
-          </div>
-        </div>
+    <tab ng-repeat="tab in tabs" heading="{{tab.heading}}" active="tab.active">
+      <div ng-if="tab.active">
+        <div ng-include="tab.template"></div>
       </div>
     </tab>
   </tabset>
