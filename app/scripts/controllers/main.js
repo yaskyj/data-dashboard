@@ -35,7 +35,6 @@ dataDashboard
           return 'Week ' + (b + 1);
         });
         $scope.weekSeries = ['Visits'];
-        console.log('this was triggered');
       };
 
       $scope.tabs = [
@@ -83,14 +82,10 @@ dataDashboard
       };
 
       //Watches for changes in dates
-      $scope.$watch('[dtStart, dtEnd, tabs]', function() {
+      $scope.$watch('[dtStart, dtEnd, tabs]', function(event, chart) {
         $scope.updateCurrentTraffic();
-        console.log($scope.tabs);
       }, true);
 
-      $scope.$on('create', function(event, chart) {
-        console.log(chart);
-      });
       //Query to get all traffic from API
       Traffic.query(function(data) {
         if (data) {
