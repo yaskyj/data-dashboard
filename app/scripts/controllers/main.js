@@ -1,4 +1,5 @@
 'use strict';
+
 Date.prototype.getWeek = function() {
         var onejan = new Date(this.getFullYear(), 0, 1);
         return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7);
@@ -7,8 +8,9 @@ Date.prototype.getWeek = function() {
 dataDashboard
   .controller('MainCtrl', ['$scope', 'Traffic',
     function ($scope, Traffic) {
+
       //Function which updates objects based on changes in dates
-      var updateCurrentTraffic = function() {
+      $scope.updateCurrentTraffic = function() {
 
         //Gets all current traffic between specified dates
         $scope.currentTraffic = _.filter($scope.trafficList, function(item) {
@@ -33,16 +35,22 @@ dataDashboard
           return 'Week ' + (b + 1);
         });
         $scope.weekSeries = ['Visits'];
+        console.log('this was triggered');
       };
 
       $scope.tabs = [
         {
-          active: true
+          "heading": "Visits by Country",
+          "active": false,
+          "template": "views/partials/pieByCountry.html"
         },
         {
-          active: false
+          "heading": "Visits by Week",
+          "active": false,
+          "template": "views/partials/lineByWeek.html"
         }
       ];
+
       //Date settings
       $scope.today = function() {
         var currentYear = new Date().getFullYear();
@@ -75,22 +83,22 @@ dataDashboard
       };
 
       //Watches for changes in dates
-      $scope.$watch('[dtStart, dtEnd]', function() {
-        updateCurrentTraffic();
+      $scope.$watch('[dtStart, dtEnd, tabs]', function() {
+        $scope.updateCurrentTraffic();
+        console.log($scope.tabs);
       }, true);
 
+      $scope.$on('create', function(event, chart) {
+        console.log(chart);
+      });
       //Query to get all traffic from API
       Traffic.query(function(data) {
         if (data) {
           $scope.trafficList = data;
-          updateCurrentTraffic();
+          $scope.updateCurrentTraffic();
         }
         else {
           console.log('There was an error!');
         }
-      });
-
-      $('div[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-        alert(e.target); // activated tab
       });
     }]);
