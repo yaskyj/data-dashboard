@@ -30,6 +30,10 @@ module.exports = function(config) {
       'bower_components/Chart.js/Chart.js',
       'bower_components/angular-chart.js/dist/angular-chart.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'bower_components/d3/d3.js',
+      'bower_components/topojson/topojson.js',
+      'bower_components/datamaps/dist/datamaps.all.js',
+      'bower_components/angular-datamaps/dist/angular-datamaps.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

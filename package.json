@@ -2,7 +2,26 @@
   "name": "zyring",
   "version": "0.0.0",
   "dependencies": {
-    "socket.io-client": "^1.3.4"
+    "alter": "^0.2.0",
+    "convert-source-map": "^1.1.0",
+    "destroy": "^1.0.3",
+    "esprima": "^2.2.0",
+    "etag": "^1.5.1",
+    "json-stringify-safe": "^5.0.0",
+    "ms": "^0.7.1",
+    "on-finished": "^2.2.1",
+    "optimist": "^0.6.1",
+    "ordered-ast-traverse": "^1.1.1",
+    "qs": "^2.4.1",
+    "range-parser": "^1.0.2",
+    "simple-fmt": "^0.1.0",
+    "simple-is": "^0.2.0",
+    "socket.io-client": "^1.3.4",
+    "source-map": "^0.4.2",
+    "stable": "^0.1.5",
+    "stringmap": "^0.2.2",
+    "stringset": "^0.2.1",
+    "tough-cookie": "^1.1.0"
   },
   "repository": {},
   "devDependencies": {

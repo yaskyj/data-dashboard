@@ -35,6 +35,22 @@ dataDashboard
           return 'Week ' + (b + 1);
         });
         $scope.weekSeries = ['Visits'];
+        $scope.map = {
+          type: 'usa',
+          data: [{
+            values: [
+              { "location": "USA", "value": 125 },
+              { "location": "CAN", "value": 50 },
+              { "location": "FRA", "value": 70 },
+              { "location": "RUS", "value": 312 }
+            ]
+          }],
+          colors: ['#666666', '#b9b9b9', '#fafafa'],
+          options: {
+            width: 1110,
+            legendHeight: 60 // optionally set the padding for the legend
+          }
+        }
       };
 
       $scope.tabs = [
@@ -47,6 +63,11 @@ dataDashboard
           "heading": "Visits by Week",
           "active": false,
           "template": "views/partials/lineByWeek.html"
+        },
+        {
+          "heading": "Visits World Map",
+          "active": false,
+          "template": "views/partials/visitsWorldMap.html"
         }
       ];
 
@@ -82,7 +103,7 @@ dataDashboard
       };
 
       //Watches for changes in dates
-      $scope.$watch('[dtStart, dtEnd, tabs]', function(event, chart) {
+      $scope.$watch('[dtStart, dtEnd, tabs]', function() {
         $scope.updateCurrentTraffic();
       }, true);
 
