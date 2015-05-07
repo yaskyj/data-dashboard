@@ -24,7 +24,7 @@
   <tabset>
     <tab ng-repeat="tab in tabs" heading="{{tab.heading}}" active="tab.active">
     </tab>
-    <div ng-if="tabs[0].active">
+    <div ng-if="tabs[0].active" ng-controller="pieByCountry">
       <div ng-include="tabs[0].template"></div>
     </div>
     <div ng-if="tabs[1].active">
