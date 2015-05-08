@@ -73,7 +73,7 @@
        ga('send', 'pageview');
     </script>
 
-    <!-- build:js(.) scripts/vendor.js -->
+    <!-- build:js(.) functionality/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -93,12 +93,12 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/pieByCountry.js"></script>
-        <script src="scripts/services/trafficFactory.js"></script>
+        <!-- build:js({.tmp,app}) functionality/functionality.js -->
+        <script src="functionality/app.js"></script>
+        <script src="functionality/components/main.js"></script>
+        <script src="functionality/components/about.js"></script>
+        <script src="functionality/components/userstories/pieByCountry/pieByCountry.js"></script>
+        <script src="functionality/services/trafficFactory.js"></script>
         <!-- endbuild -->
 
   <script>

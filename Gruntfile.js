@@ -56,7 +56,7 @@ module.exports = function (grunt) {
                 tasks: ['wiredep']
             },
             js: {
-                files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
+                files: ['<%= yeoman.app %>/functionality/{,*/}*.js'],
                 tasks: ['newer:jshint:all'],
                 options: {
                     livereload: '<%= connect.options.livereload %>'
@@ -141,7 +141,7 @@ module.exports = function (grunt) {
             all: {
                 src: [
                     'Gruntfile.js',
-                    '<%= yeoman.app %>/scripts/{,*/}*.js'
+                    '<%= yeoman.app %>/functionality/{,*/}*.js'
                 ]
             },
             test: {
@@ -210,7 +210,7 @@ module.exports = function (grunt) {
         filerev: {
             dist: {
                 src: [
-                    '<%= yeoman.dist %>/scripts/{,*/}*.js',
+                    '<%= yeoman.dist %>/functionality/{,*/}*.js',
                     '<%= yeoman.dist %>/styles/{,*/}*.css',
                     '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
                     '<%= yeoman.dist %>/styles/fonts/*'
@@ -266,8 +266,8 @@ module.exports = function (grunt) {
         // uglify: {
         //   dist: {
         //     files: {
-        //       '<%= yeoman.dist %>/scripts/scripts.js': [
-        //         '<%= yeoman.dist %>/scripts/scripts.js'
+        //       '<%= yeoman.dist %>/functionality/functionality.js': [
+        //         '<%= yeoman.dist %>/functionality/functionality.js'
         //       ]
         //     }
         //   }
@@ -322,9 +322,9 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '.tmp/concat/scripts',
+                    cwd: '.tmp/concat/functionality',
                     src: ['*.js', '!oldieshim.js'],
-                    dest: '.tmp/concat/scripts'
+                    dest: '.tmp/concat/functionality'
                 }]
             }
         },

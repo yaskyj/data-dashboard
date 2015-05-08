@@ -36,7 +36,7 @@ module.exports = function(config) {
       'bower_components/angular-datamaps/dist/angular-datamaps.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
-      'app/scripts/**/*.js',
+      '../app/functionality/**/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js'
     ],
