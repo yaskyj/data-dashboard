@@ -17,9 +17,9 @@ dataDashboard
         });
 
         ////Visits by country
-        //$scope.countryCount = _.countBy($scope.currentTraffic, 'country');
-        //$scope.countries = _.keys($scope.countryCount);
-        //$scope.visits = _.values($scope.countryCount);
+        $scope.countryCount = _.countBy($scope.currentTraffic, 'country');
+        $scope.countries = _.keys($scope.countryCount);
+        $scope.visits = _.values($scope.countryCount);
 
         //Visits by week
         $scope.weeklyCount = _.groupBy($scope.currentTraffic, function(item) {
@@ -75,17 +75,17 @@ dataDashboard
         {
           "heading": "Visits by Country",
           "active": false,
-          "template": "views/partials/pieByCountry.html"
+          "template": "./functionality/components/userstories/pieByCountry/pieByCountry.html"
         },
         {
           "heading": "Visits by Week",
           "active": false,
-          "template": "views/partials/lineByWeek.html"
+          "template": "./functionality/components/userstories/lineByWeek/lineByWeek.html"
         },
         {
           "heading": "Visits World Map",
           "active": false,
-          "template": "views/partials/visitsWorldMap.html"
+          "template": "./functionality/components/userstories/visitsWorldMap/visitsWorldMap.html"
         }
       ];
 

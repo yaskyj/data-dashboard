@@ -13,11 +13,11 @@ var dataDashboard = angular.module('dataDashboard', ['ngAnimate', 'ngResource', 
 dataDashboard.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: './functionality/components/main.html',
         controller: 'MainCtrl'
       })
       .when('/about', {
-        templateUrl: 'views/about.html',
+        templateUrl: './functionality/components/about.html',
         controller: 'AboutCtrl'
       })
       .otherwise({
