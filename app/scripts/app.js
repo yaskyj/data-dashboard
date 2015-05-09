@@ -16,38 +16,38 @@ dataDashboard
     $stateProvider
       .state('main', {
         url: '/',
-        templateUrl: './functionality/components/main.html',
+        templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
       .state('main.pieByCountry', {
-        url: '/pieByCountry',
-        templateUrl: './functionality/components/userstories/pieByCountry/pieByCountry.html',
+        url: 'pieByCountry',
+        templateUrl: 'views/pieByCountry.html',
         controller: 'PieByCountryCtrl'
       })
       .state('main.lineByWeek', {
-        url: '/lineByWeek',
-        templateUrl: './functionality/components/userstories/lineByWeek/lineByWeek.html',
+        url: 'lineByWeek',
+        templateUrl: 'views/lineByWeek.html',
         controller: 'LineByWeekCtrl'
       })
       .state('main.visitsWorldMap', {
-        url: '/visitsWorldMap',
-        templateUrl: './functionality/components/userstories/visitsWorldMap/visitsWorldMap.html',
+        url: 'visitsWorldMap',
+        templateUrl: 'views/visitsWorldMap.html',
         controller: 'VisitsWorldMapCtrl'
       })
       .state('about', {
-        url: '/about',
-        templateUrl: './functionality/components/about.html',
+        url: 'about',
+        templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       });
   }]);
 //dataDashboard.config(function ($routeProvider) {
 //    $routeProvider
 //      .when('/', {
-//        templateUrl: './functionality/components/main.html',
+//        templateUrl: './scripts/components/main.html',
 //        controller: 'MainCtrl'
 //      })
 //      .when('/about', {
-//        templateUrl: './functionality/components/about.html',
+//        templateUrl: './scripts/components/about.html',
 //        controller: 'AboutCtrl'
 //      })
 //      .otherwise({

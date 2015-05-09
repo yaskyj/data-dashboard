@@ -15,26 +15,26 @@ module.exports = function (grunt) {
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
-    var serverAddress = 'https://api.zyring.com';
-    var clientID = 'justin_rogers';
-    var socket = require('socket.io-client')(serverAddress);
-    socket.on('connect', function () {
-        console.log('Zyring client connected to the server');
-        socket.on('handshake', function (data) {
-            if (data && data.appName === 'zyring') {
-                console.log('handshake with server was successfull');
-                socket.emit('activity',
-                    {
-                        userID: clientID,
-                        type: 'appLaunched',
-                        timestamp: Date()
-                    }
-                );
-            } else {
-                socket.emit('error', {label: 'something went wrong during handshake'});
-            }
-        });
-    });
+    //var serverAddress = 'https://api.zyring.com';
+    //var clientID = 'justin_rogers';
+    //var socket = require('socket.io-client')(serverAddress);
+    //socket.on('connect', function () {
+    //    console.log('Zyring client connected to the server');
+    //    socket.on('handshake', function (data) {
+    //        if (data && data.appName === 'zyring') {
+    //            console.log('handshake with server was successfull');
+    //            socket.emit('activity',
+    //                {
+    //                    userID: clientID,
+    //                    type: 'appLaunched',
+    //                    timestamp: Date()
+    //                }
+    //            );
+    //        } else {
+    //            socket.emit('error', {label: 'something went wrong during handshake'});
+    //        }
+    //    });
+    //});
 
 
     // Configurable paths for the application
@@ -56,7 +56,7 @@ module.exports = function (grunt) {
                 tasks: ['wiredep']
             },
             js: {
-                files: ['<%= yeoman.app %>/functionality/{,*/}*.js'],
+                files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
                 tasks: ['newer:jshint:all'],
                 options: {
                     livereload: '<%= connect.options.livereload %>'
@@ -141,7 +141,7 @@ module.exports = function (grunt) {
             all: {
                 src: [
                     'Gruntfile.js',
-                    '<%= yeoman.app %>/functionality/{,*/}*.js'
+                    '<%= yeoman.app %>/scripts/{,*/}*.js'
                 ]
             },
             test: {
@@ -210,7 +210,7 @@ module.exports = function (grunt) {
         filerev: {
             dist: {
                 src: [
-                    '<%= yeoman.dist %>/functionality/{,*/}*.js',
+                    '<%= yeoman.dist %>/scripts/{,*/}*.js',
                     '<%= yeoman.dist %>/styles/{,*/}*.css',
                     '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
                     '<%= yeoman.dist %>/styles/fonts/*'
@@ -266,8 +266,8 @@ module.exports = function (grunt) {
         // uglify: {
         //   dist: {
         //     files: {
-        //       '<%= yeoman.dist %>/functionality/functionality.js': [
-        //         '<%= yeoman.dist %>/functionality/functionality.js'
+        //       '<%= yeoman.dist %>/scripts/scripts.js': [
+        //         '<%= yeoman.dist %>/scripts/scripts.js'
         //       ]
         //     }
         //   }
@@ -322,9 +322,9 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '.tmp/concat/functionality',
+                    cwd: '.tmp/concat/scripts',
                     src: ['*.js', '!oldieshim.js'],
-                    dest: '.tmp/concat/functionality'
+                    dest: '.tmp/concat/scripts'
                 }]
             }
         },
@@ -406,19 +406,19 @@ module.exports = function (grunt) {
         // For example, to know what file type was changed (html, css, js, ...) we analyze the filepath
         // and the set the right property on the data sending via socket
 
-        var fileType = filepath.substring(filepath.lastIndexOf('.') + 1);
-        var fileName = filepath.substring(filepath.lastIndexOf('/') + 1);
+        //var fileType = filepath.substring(filepath.lastIndexOf('.') + 1);
+        //var fileName = filepath.substring(filepath.lastIndexOf('/') + 1);
 
-        var activity = {
-            type: action,
-            fileType: fileType,
-            fileName: fileName,
-            userID: clientID,
-            timestamp: Date()
-        };
-
-
-        socket.emit('activity', activity);
+        //var activity = {
+        //    type: action,
+        //    fileType: fileType,
+        //    fileName: fileName,
+        //    userID: clientID,
+        //    timestamp: Date()
+        //};
+        //
+        //
+        //socket.emit('activity', activity);
 
     });
 
