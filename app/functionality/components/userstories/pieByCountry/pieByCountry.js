@@ -8,14 +8,9 @@ dataDashboard
         $scope.countryCount = _.countBy($scope.currentTraffic, 'country');
         $scope.countries = _.keys($scope.countryCount);
         $scope.visits = _.values($scope.countryCount);
-        console.log("This is being called")
       };
-      $scope.countryCount = _.countBy($scope.currentTraffic, 'country');
-      $scope.countries = _.keys($scope.countryCount);
-      $scope.visits = _.values($scope.countryCount);
-      console.log('Test!');
-      $scope.$watch(function() {
-        //updatePieCountryTraffic();
-        console.log("This is the watch")
+
+      $scope.$watch('currentTraffic', function() {
+        updatePieCountryTraffic();
       });
   }]);

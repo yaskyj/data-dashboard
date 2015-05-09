@@ -8,6 +8,6 @@
  * Controller of the zyringApp
  */
 dataDashboard
-  .controller('AboutCtrl', function ($scope) {
+  .controller('AboutCtrl', ['$scope', '$state', function ($scope, $state) {
     console.log("About test!");
-  });
+  }]);
