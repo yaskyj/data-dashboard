@@ -35,6 +35,7 @@ module.exports = function(config) {
       'bower_components/datamaps/dist/datamaps.all.js',
       'bower_components/angular-datamaps/dist/angular-datamaps.min.js',
       'bower_components/angular-ui-router/release/angular-ui-router.js',
+      'bower_components/colorbrewer/colorbrewer.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       '../app/functionality/**/*.js',

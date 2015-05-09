@@ -21,19 +21,16 @@ dataDashboard
           "heading": "Visits by Country",
           "active": false,
           route: "main.pieByCountry"
-          //"template": "./functionality/components/userstories/pieByCountry/pieByCountry.html"
         },
         {
           "heading": "Visits by Week",
           "active": false,
           route: "main.lineByWeek"
-          //"template": "./functionality/components/userstories/lineByWeek/lineByWeek.html"
         },
         {
           "heading": "Visits World Map",
           "active": false,
           route: "main.visitsWorldMap"
-          //"template": "./functionality/components/userstories/visitsWorldMap/visitsWorldMap.html"
         }
       ];
 
