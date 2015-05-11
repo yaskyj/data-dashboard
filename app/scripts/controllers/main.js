@@ -5,7 +5,7 @@ Date.prototype.getWeek = function() {
         return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7);
 };
 
-dataDashboard
+angular.module('dataDashboard')
   .controller('MainCtrl', ['$scope', 'Traffic', '$state',
     function ($scope, Traffic, $state) {
       //Function which updates objects based on changes in dates

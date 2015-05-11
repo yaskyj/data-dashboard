@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the zyringApp
  */
-dataDashboard
+angular.module('dataDashboard')
   .controller('AboutCtrl', ['$scope', '$state', function ($scope, $state) {
     console.log("About test!");
   }]);
