@@ -1,6 +1,6 @@
 'use strict';
 
-dataDashboard
+angular.module('dataDashboard')
   .controller('PieByCountryCtrl', ['$scope',
     function($scope) {
       var updatePieCountryTraffic = function () {

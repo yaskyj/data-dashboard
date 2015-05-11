@@ -8,10 +8,8 @@
  *
  * Main module of the application.
  */
-var dataDashboard = angular.module('dataDashboard', ['ngAnimate', 'ngResource', 'ngRoute', 'ngTouch', 'chart.js', 'ui.bootstrap', 'datamaps', 'ui.router']);
-
-dataDashboard
-  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+angular.module('dataDashboard', ['ngAnimate', 'ngResource', 'ngRoute', 'ngTouch', 'chart.js', 'ui.bootstrap', 'datamaps', 'ui.router'])
+ .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider
       .state('main', {

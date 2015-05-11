@@ -1,6 +1,6 @@
 'use strict';
 
-dataDashboard
+angular.module('dataDashboard')
   .controller('NavigationCtrl', ['$scope', function($scope) {
     $scope.tabNav = [
       {link: 'main', name: 'Home', active: false},

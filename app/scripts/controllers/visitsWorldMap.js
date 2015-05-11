@@ -1,6 +1,6 @@
 'use strict';
 
-dataDashboard
+angular.module('dataDashboard')
   .controller('VisitsWorldMapCtrl', ['$scope',
     function($scope) {
       var updateVisitsWorldMap = function () {
