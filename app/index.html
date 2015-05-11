@@ -22,9 +22,6 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!--<script src="util/socket.io-1.3.4.js"></script>-->
-    <!--<script src="util/humane.min.js"></script>-->
-
     <!-- Add your site or application content here -->
     <div class="header">
       <div class="navbar navbar-default" role="navigation">
@@ -44,9 +41,6 @@
 
             <ul class="nav navbar-nav" ng-controller="NavigationCtrl">
                 <li ng-repeat="tab in tabNav" class="icon-bar"><a ui-sref="{{tab.link}}" ng-bind="tab.name"></a></li>
-              <!--<li class="active"><a ui-sref="main">Home</a></li>-->
-              <!--<li><a ui-sref="about">About</a></li>-->
-              <!--<li><a ui-sref="#/">Contact</a></li>-->
             </ul>
           </div>
         </div>
@@ -57,11 +51,11 @@
         <div ui-view></div>
     </div>
 
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Zyring team</p>
-      </div>
-    </div>
+    <!--<div class="footer">-->
+      <!--<div class="container">-->
+        <!--<p><span class="glyphicon glyphicon-heart"></span> from the Zyring team</p>-->
+      <!--</div>-->
+    <!--</div>-->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -106,39 +100,5 @@
         <script src="scripts/controllers/visitsWorldMap.js"></script>
         <script src="scripts/services/trafficFactory.js"></script>
         <!-- endbuild -->
-
-  <!--<script>-->
-      <!--// self executing function here-->
-      <!--(function() {-->
-          <!--// your page initialization code here-->
-          <!--// the DOM will be available here-->
-          <!--var notifyToaster = humane.create({ timeout: 10000, baseCls: 'humane-libnotify', clickToClose:true });-->
-          <!--var socket = io('https://api.zyring.com');-->
-          <!--var zyringUserID = 'justin_rogers';-->
-          <!--socket.on('connect', function() {-->
-              <!--// ask the server if we should show the toaster or not-->
-              <!--socket.emit('isToasterVisible',{userID:zyringUserID});-->
-
-              <!--socket.on('toasterState', function (data) {-->
-                  <!--if (data.toasterVisibility === true) {-->
-                      <!--notifyToaster.log(data.msg);-->
-                  <!--}-->
-              <!--});-->
-
-          <!--});-->
-
-          <!--notifyToaster.el.onclick =  function() {-->
-              <!--socket.emit('toasterClicked',-->
-                      <!--{-->
-                          <!--userID: zyringUserID,-->
-                          <!--type: 'requestHelp',-->
-                          <!--timestamp: Date()-->
-                      <!--}-->
-              <!--);-->
-          <!--};-->
-
-
-      <!--})();-->
-  <!--</script>-->
   </body>
 </html>
