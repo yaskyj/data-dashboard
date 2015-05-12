@@ -31,6 +31,11 @@ angular.module('dataDashboard')
           "heading": "Visits World Map",
           "active": false,
           route: "main.visitsWorldMap"
+        },
+        {
+          "heading": "Keyword Cloud",
+          "active": false,
+          route: "main.keywordCloud"
         }
       ];
 
