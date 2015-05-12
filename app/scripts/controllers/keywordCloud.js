@@ -26,17 +26,23 @@ angular.module('dataDashboard')
         //Create sortable array of words
         _.forEach(keywordCount, function(value, key) {
           var tempObj = {};
-          tempObj.word = key;
-          tempObj.count = value;
+          tempObj.text = key;
+          tempObj.weight = value;
           keywordCountArr.push(tempObj);
         });
         //Descending sort of keywords by key word count
         keywordCountArr = keywordCountArr.sort(function(a, b) {
-          return b.count - a.count;
+          return b.weight - a.weight;
         });
         //Creates an array of the top ten keywords by count
         keywordTopTen = keywordCountArr.slice(0, 10);
-        console.log(keywordTopTen);
+        //Creates the word cloud on the keyword-cloud div
+        $('#keyword-cloud').jQCloud(keywordTopTen, {
+          width: 1170,
+          height: 350,
+          steps: 8,
+          autoResize: true
+        });
       };
       //Query to get all keywords from API
       Keyword.query(function(data) {
