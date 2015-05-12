@@ -32,6 +32,11 @@ angular.module('dataDashboard', ['ngAnimate', 'ngResource', 'ngRoute', 'ngTouch'
         templateUrl: 'views/visitsWorldMap.html',
         controller: 'VisitsWorldMapCtrl'
       })
+      .state('main.keywordCloud', {
+        url: 'keywordCloud',
+        templateUrl: 'views/keywordCloud.html',
+        controller: 'KeywordCloudCtrl'
+      })
       .state('about', {
         url: 'about',
         templateUrl: 'views/about.html',
