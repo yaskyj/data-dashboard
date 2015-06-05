@@ -1,10 +1,10 @@
-# Zyring
+# Data Dashboard
 
-## Preparation
+##[Live Site on AWS](http://data-dashboard.s3-website-us-east-1.amazonaws.com/)
 
-Run 'npm install'
-Run 'bower install'
+##Project Tech Notes
+API from Zyring
+###Build:
+Yeoman, Grunt, and Angular
 
-## Build & development
-
-Run `grunt` for building and `grunt serve` for preview.
+Other libraries: lodash, Angular-chart.js, AngularUI Router, UI Bootstrap, Datamaps, and jQCloud
